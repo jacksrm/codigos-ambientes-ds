@@ -7,15 +7,15 @@ let leitor = rl.createInterface({
 
 leitor.question('Insira um número: ', (entrada) => {
   let num = parseInt(entrada);
-  console.log(isEven(num));
+  console.log(ePrimo(num) === true ? 'É primo' : 'Não é primo');
 });
 
-const isEven = (n) => {
-  let aux = n % 2;
+const ePrimo = (n) => {
+  for(let i = 2; i < n; i++) {
+    let aux = n % i;
 
-  if (n === 0) {
-    return 'Par';
-  } else {
-    return 'Impar';
+    if(aux === 0) return false;
   }
+  
+  return n > 1;
 };
