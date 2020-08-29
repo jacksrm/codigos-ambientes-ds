@@ -1,4 +1,4 @@
-let rl = require('readline');
+const rl = require('readline');
 
 let leitor = rl.createInterface({
   input: process.stdin,

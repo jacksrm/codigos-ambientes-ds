@@ -1,19 +1,14 @@
 let rl = require('readline');
 
-let num1 = '';
-let num2 = '';
-
 let leitor = rl.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-leitor.question('Insira os dois divisores separados por vírgula(,): ',(entrada) => {
+leitor.question('Insira os dois divisores separados por vírgula(,): ', (entrada) => {
     let aux = toArray(entrada);
-    num1 = aux[0];
-    num2 = aux[1];
 
-    console.log(`MDC = ${mdc(num1, num2)}`);
+    console.log(`MDC = ${mdc(aux[0], aux[1])}`);
   }
 );
 
@@ -29,3 +24,4 @@ const mdc = (num1, num2) => {
     if (resto1 === 0 && resto2 === 0) return teto;
   }
 };
+
